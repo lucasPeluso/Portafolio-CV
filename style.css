@@ -48,8 +48,6 @@ h2 {
 h3 {
     margin: 0;
     font-size: 2rem;
-    font-weight: lighter;
-    line-height: 1.6;
 }
 
 img {
@@ -96,14 +94,10 @@ p {
 }
 
 .contact-form input[type="submit"] {
-    border: 0;
+    border: 2px solid var(--first-color);
+    border-radius: 30px;
     margin-top: 0;
     cursor: pointer;
-    transition: all .5s ease-out;
-}
-
-.contact-form input[type="submit"]:hover {
-    opacity: .75;
 }
 
 .contact-form *::placeholder {
@@ -140,10 +134,11 @@ p {
     }
 
     .contact-form textarea,
-    .contact-form-loader {
+    .contact-form-loader, 
+    .contact-form .btn{
         grid-column: span 2;
     }
-    
+
 }
 
 /* *********** Menu ************ */
@@ -199,19 +194,42 @@ p {
         opacity: 1;
         pointer-events: auto;
         background-color: var(--body-color);
+        list-style: none;
     }
 
     .menu a {
-        padding: 0 1rem;
+        padding: 0;
+        margin: 0 1rem;
         font-size: 1.375rem;
         font-weight: normal;
         text-align: center;
         text-decoration: none;
-        color: var(--text-color);      
+        color: var(--text-color);
+        position: relative;      
     }
 
-    .menu a:last-child {
-        padding-right: 0;
+    .menu a::after {
+        content: "";
+        background-color: var(--first-color);
+        position: absolute;
+        left: 0;
+        bottom: -.3rem;
+        width: 100%;
+        height: .2rem;
+
+        opacity: 0;
+        transform: scaleX(0);
+        transition: all .3s ease-out;
+    }
+
+    .menu a.selected::after,
+    .menu a:hover::after {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    .menu a:last-child{
+        margin-right: 0;
     }
 
     .menu a:hover {
@@ -264,21 +282,30 @@ p {
     background-color: var(--gray-light-color);
 }
 
+.bold {
+    font-weight: 700;
+}
+
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 .btn {
-    border-radius: 0.5rem;
-    padding: 1rem;
-    display: inline-block;
-    width: 100%;
+    border: 2px solid var(--first-color);
+    border-radius: 30px;
+    padding: 13px 20px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 18px;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: var(--first-color);
+    background-color: var(--body-color);
+    transition: all .3s ease-out;
+}
+
+.btn:hover {
     background-color: var(--first-color);
+    color: white;
 }
 
 .container {
@@ -296,8 +323,16 @@ p {
     cursor: grabbing;
 }
 
+.light {
+    font-weight: lighter;
+}
+
 .none {
     display: none;
+}
+
+.regular {
+    font-weight: 400;
 }
 
 .text-center {
@@ -305,8 +340,26 @@ p {
 }
 
 /* *********** Site Styles  ************ */
+
+.circle {
+    fill: var(--second-color);
+}
+
 .contact {
     padding: 1rem;
+}
+
+.contact-btn .circle,
+.contact-btn .icon{
+    transition: all .3s ease-out;
+}
+
+.contact-btn:hover .circle {
+    fill: var(--first-color);
+}
+
+.contact-btn:hover .icon {
+    fill: white;
 }
 
 .contact-card {
@@ -318,6 +371,16 @@ p {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.contact-cards a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all .5s ease-in-out;
+}
+
+.contact-cards a:hover {
+    transform: translateY(-1rem);
 }
 
 .contact-card small {
@@ -346,6 +409,7 @@ p {
 
 }
 
+
 .galery {
     position: relative;
     width: 100%;
@@ -365,10 +429,8 @@ p {
 
 .galery-item:first-child{
     grid-row-start: span 2;
-}
-
-.galery-item:first-child{
     grid-column-start: span 3;
+
 }
 
 .galery-item:nth-child(3){
@@ -391,6 +453,7 @@ p {
     grid-column-start: span 3;
 }
 
+
 .header {
     position: fixed;
     left: 0;
@@ -408,12 +471,89 @@ p {
     align-items: center;
 }
 
+.home > .container{
+    position: relative;
+}
+
+.home-btn {
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.home-contact {
+    padding: 1rem 1rem 0 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+}
+.home-contact a{
+    text-decoration: none;
+}
+
+.home-contact svg{
+    width: 40px;
+}
+
+.home-text h1{
+    font-size: 2.5rem;
+    line-height: 5rem;
+}
+
+.home-text h3{
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+
+.home-foto {
+    width: 350px;
+    padding: 2rem;
+    margin: auto;
+}
+
+.home-lucas {
+    animation: fadeIn 1s ease-in-out;    
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.item-bottom {
+    position: relative;
+    bottom: -80px;
+    opacity: 0;
+    transition: 1s linear;
+}
+
+.item-left {
+    position: relative;
+    left: -80px;
+    opacity: 0;
+    transition: .5s linear;
+}
+
+.item-right {
+    position: relative;
+    right: -80px;
+    opacity: 0;
+    transition: 1s linear;
+}
+
 .logo a{
     font-size: 2rem;
 }
 
-.nombre {
+.name {
+    font-size: 4rem;
+    font-weight: 700;
     color: var(--first-color);
+    line-height: 75px;
 }
 
 .projects {
@@ -500,6 +640,10 @@ p {
     padding: 2rem 0 1rem 0;
     width: 84%;
 
+    position: relative;
+    left: -80px;
+    opacity: 0;
+    transition: 1s ease-in-out;
 }
 
 .skills-habilidades p{
@@ -520,62 +664,52 @@ p {
     gap: 1rem;
     width: 80%;
 
+    position: relative;
+    bottom: -80px;
+    opacity: 0;
+    transition: 1s ease-in-out;
 }
 
-.sobremi-btn {
-    margin-top: 2rem;
-    width: 100%;
-}
+/* ************* Efectos ************** */
 
-.sobremi-contact {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    bottom: calc(var(--header-height) + 3.5rem);
-}
-
-.sobremi-contact a{
-    text-decoration: none;
-    padding-top: 1rem;
-}
-
-.sobremi-contact a:first-child{
-    padding-top: 0;
-}
-
-.sobremi-contact a:hover{
-    opacity: 0.5;
-}
-
-.sobremi-contact svg{
-    width: 70px;
-}
-
-.sobremi-container{
-    padding: 40px 20px 0 20px;
-}
-
-.sobremi-container h1{
-    font-size: 6vw;
-}
-
-.sobremi-container h3{
-    margin-top: 1rem;
-    font-size: 1.3rem;
-}
-
-.sobremi-container p{
-    font-size: 14px;
-}
-
-.sobremi-foto img{
-    margin: 0;
-    position: absolute;
-    width: 400px;
-    right: -40px;
+.efecto-bottom {
     bottom: 0;
+    opacity: 1;
 }
+
+.efecto-left {
+    left: 0;
+    opacity: 1;
+}
+
+.efecto-right {
+    right: 0;
+    opacity: 1;
+}
+
 @media screen and (min-width: 768px) {
+
+    .home-contact svg {
+        width: 50px;
+    }
+
+    .home-flex {
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+    }
+
+    .home-grid .home-btn {
+        grid-column: span 2;
+    }
 
     .contact-cards {
         display: grid;
@@ -624,28 +758,6 @@ p {
 
     .skills-tecnologias {
         padding-bottom: 1rem;
-    }
-
-    .sobremi-contact {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .sobremi-contact a{
-        padding: 0 0.5rem 0 0.5rem;
-    }
-
-    .sobremi-contact a:first-child{
-        padding-left: 0;
-    }
-    .sobremi-contact svg{
-        width: 80px;
-    }
-    .sobremi-foto img{
-        margin: 0;
-        position: absolute;
-        right: -40px;
     }
 }
 
@@ -716,6 +828,12 @@ p {
         height: var(--header-height);
     }
 
+    .home-contact {
+        position: absolute;
+        right: 0;
+        bottom: 2rem;
+    }
+
     .projects > .container {
         grid-template-columns: repeat(3, 1fr);
         padding-bottom: 3rem;
@@ -725,29 +843,9 @@ p {
         grid-column: span 3;
     }
 
-    .sobremi-btn {
-        margin-top: 2rem;
-        max-width: 50%;
+    section[id="disenios"],
+    section[id="contacto"] {
+    scroll-margin-top: var(--header-height);
     }
 
-    .sobremi-contact {
-        bottom: 50px;
-    }
-
-    .sobremi-container{
-        padding-top: 100px;
-        padding-left: 0;
-    }
-
-    .sobremi-container h3{
-        margin-top: 1rem;
-        font-size: 2rem;
-    }
-
-    .sobremi-foto img{
-        margin: 0;
-        width: 35%;
-        right: 0;
-        bottom: 0;
-    }
 }
