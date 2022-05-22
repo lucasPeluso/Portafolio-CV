@@ -111,11 +111,6 @@ function animacionElementos() {
         $itemLeft.classList.add("efecto-left");
     }
 
-    distancia_item_right = window.innerHeight - $itemRight.getBoundingClientRect().top;
-    if(distancia_item_right >= 100){
-        $itemRight.classList.add("efecto-right");
-    }
-
     distancia_item_bottom = window.innerHeight - $itemBottom.getBoundingClientRect().top;
     if(distancia_item_bottom >= 100){
         $itemBottom.classList.add("efecto-bottom");
