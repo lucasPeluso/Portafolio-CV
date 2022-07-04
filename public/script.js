@@ -84,36 +84,36 @@ sections.forEach((section) => {
 
 // **************** Animaciones ***********
 
-window.onscroll = function(){animacionElementos()};
+window.onscroll = function(){animationElementos()};
 
-const $habilidades = document.querySelector(".skills-habilidades");
-    $tecnologias = document.querySelector(".skills-tecnologias");
+const $skills = document.querySelector(".skills-habilidades");
+    $technologies = document.querySelector(".skills-tecnologias");
     $itemLeft = document.querySelector(".item-left");
     $itemRight = document.querySelector(".item-right");
     $itemBottom = document.querySelector(".item-bottom")
 
-let distancia_habilidades, distancia_tecnologias, distancia_item_left, distancia_item_right, distancia_item_bottom;
+let distance_skills, distance_technologies, distance_item_left, distance_item_right, distance_item_bottom;
 
-function animacionElementos() {
-    distancia_habilidades = window.innerHeight - $habilidades.getBoundingClientRect().top;
+function animationElementos() {
+    distance_skills = window.innerHeight - $skills.getBoundingClientRect().top;
     
-    if(distancia_habilidades >= 200){
-        $habilidades.classList.add("efecto-left");
+    if(distance_skills >= 200){
+        $skills.classList.add("efect-left");
     }
 
-    distancia_tecnologias = window.innerHeight - $tecnologias.getBoundingClientRect().top;
-    if(distancia_tecnologias >= 100){
-        $tecnologias.classList.add("efecto-bottom");
+    distance_technologies = window.innerHeight - $technologies.getBoundingClientRect().top;
+    if(distance_technologies >= 100){
+        $technologies.classList.add("efect-bottom");
     }
 
-    distancia_item_left = window.innerHeight - $itemLeft.getBoundingClientRect().top;
-    if(distancia_item_left >= 100){
-        $itemLeft.classList.add("efecto-left");
+    distance_item_left = window.innerHeight - $itemLeft.getBoundingClientRect().top;
+    if(distance_item_left >= 100){
+        $itemLeft.classList.add("efect-left");
     }
 
-    distancia_item_bottom = window.innerHeight - $itemBottom.getBoundingClientRect().top;
-    if(distancia_item_bottom >= 100){
-        $itemBottom.classList.add("efecto-bottom");
+    distance_item_bottom = window.innerHeight - $itemBottom.getBoundingClientRect().top;
+    if(distance_item_bottom >= 100){
+        $itemBottom.classList.add("efect-bottom");
     }
 }
 
