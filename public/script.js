@@ -84,7 +84,7 @@ sections.forEach((section) => {
 
 // **************** Animaciones ***********
 
-window.onscroll = function(){animationElementos()};
+window.onscroll = () => animationElements()
 
 const $skills = document.querySelector(".skills-habilidades");
     $technologies = document.querySelector(".skills-tecnologias");
@@ -92,27 +92,27 @@ const $skills = document.querySelector(".skills-habilidades");
     $itemRight = document.querySelector(".item-right");
     $itemBottom = document.querySelector(".item-bottom")
 
-let distance_skills, distance_technologies, distance_item_left, distance_item_right, distance_item_bottom;
+let distanceSkills, distanceTechnologies, distanceItemLeft, distanceItemBottom;
 
-function animationElementos() {
-    distance_skills = window.innerHeight - $skills.getBoundingClientRect().top;
+const animationElements = () => {
+    distanceSkills = window.innerHeight - $skills.getBoundingClientRect().top;
     
-    if(distance_skills >= 200){
+    if(distanceSkills >= 200){
         $skills.classList.add("efect-left");
     }
 
-    distance_technologies = window.innerHeight - $technologies.getBoundingClientRect().top;
-    if(distance_technologies >= 100){
+    distanceTechnologies = window.innerHeight - $technologies.getBoundingClientRect().top;
+    if(distanceTechnologies >= 100){
         $technologies.classList.add("efect-bottom");
     }
 
-    distance_item_left = window.innerHeight - $itemLeft.getBoundingClientRect().top;
-    if(distance_item_left >= 100){
+    distanceItemLeft = window.innerHeight - $itemLeft.getBoundingClientRect().top;
+    if(distanceItemLeft >= 100){
         $itemLeft.classList.add("efect-left");
     }
 
-    distance_item_bottom = window.innerHeight - $itemBottom.getBoundingClientRect().top;
-    if(distance_item_bottom >= 100){
+    distanceItemBottom = window.innerHeight - $itemBottom.getBoundingClientRect().top;
+    if(distanceItemBottom >= 100){
         $itemBottom.classList.add("efect-bottom");
     }
 }
