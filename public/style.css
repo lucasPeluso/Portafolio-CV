@@ -118,7 +118,11 @@ small {
 .contact-form-response {
     padding: 1rem;
     width: 400px;
-    background-color: white;
+    background-color: var(--second-color);
+}
+
+.contact-form-response h4 {
+    color: var(--third-color);
 }
 
 .contact-form-response svg{
