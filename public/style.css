@@ -594,11 +594,15 @@ small {
     }
 }
 
-.item-bottom {
+.item-bottom,
+.item-bottom-two,
+.item-bottom-three,
+.item-bottom-four,
+.item-bottom-five {
     position: relative;
-    bottom: -80px;
+    bottom: -40px;
     opacity: 0;
-    transition: 1s linear;
+    transition: .5s linear;
 }
 
 .item-left {
@@ -606,13 +610,6 @@ small {
     left: -80px;
     opacity: 0;
     transition: .5s linear;
-}
-
-.item-right {
-    position: relative;
-    right: -80px;
-    opacity: 0;
-    transition: 1s linear;
 }
 
 .logo a{
@@ -637,6 +634,11 @@ small {
     width: 100%;
     margin: 30px auto;
     display: block;
+    transition: all .5s ease-in-out;
+}
+
+.projects-card:hover {
+    transform: translateY(-1rem);
 }
 
 .projects-card:last-child {
@@ -675,6 +677,7 @@ small {
 }
 
 .projects-card:hover .projects-card-info {
+
     opacity: 1;
     pointer-events: auto;
 }
@@ -718,7 +721,7 @@ small {
     color: var(--first-color);
     letter-spacing: 5px;
     margin-top: 0;
-    padding-top: 3rem;
+    padding-top: 4rem;
     text-align: center;
 }
 
@@ -779,11 +782,6 @@ small {
 
 .efect-left {
     left: 0;
-    opacity: 1;
-}
-
-.efect-right {
-    right: 0;
     opacity: 1;
 }
 

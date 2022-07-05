@@ -86,34 +86,51 @@ sections.forEach((section) => {
 
 window.onscroll = () => animationElements()
 
-const $skills = document.querySelector(".skills-habilidades");
-    $technologies = document.querySelector(".skills-tecnologias");
-    $itemLeft = document.querySelector(".item-left");
-    $itemRight = document.querySelector(".item-right");
-    $itemBottom = document.querySelector(".item-bottom")
+const skills = document.querySelector(".skills-habilidades");
+    technologies = document.querySelector(".skills-tecnologias");
+    itemBottom = document.querySelector(".item-bottom")
+    itemBottomTwo = document.querySelector(".item-bottom-two")
+    itemBottomThree = document.querySelector(".item-bottom-three")
+    itemBottomFour = document.querySelector(".item-bottom-four")
+    itemBottomFive = document.querySelector(".item-bottom-five")
 
-let distanceSkills, distanceTechnologies, distanceItemLeft, distanceItemBottom;
+let distanceSkills, distanceTechnologies, distanceItemBottom, distanceItemBottomTwo, distanceItemBottomThree, distanceItemBottomFour, distanceItemBottomFive;
 
 const animationElements = () => {
-    distanceSkills = window.innerHeight - $skills.getBoundingClientRect().top;
-    
+    distanceSkills = window.innerHeight - skills.getBoundingClientRect().top;
     if(distanceSkills >= 200){
-        $skills.classList.add("efect-left");
+        skills.classList.add("efect-left");
     }
 
-    distanceTechnologies = window.innerHeight - $technologies.getBoundingClientRect().top;
+    distanceTechnologies = window.innerHeight - technologies.getBoundingClientRect().top;
     if(distanceTechnologies >= 100){
-        $technologies.classList.add("efect-bottom");
+        technologies.classList.add("efect-bottom");
     }
 
-    distanceItemLeft = window.innerHeight - $itemLeft.getBoundingClientRect().top;
-    if(distanceItemLeft >= 100){
-        $itemLeft.classList.add("efect-left");
-    }
-
-    distanceItemBottom = window.innerHeight - $itemBottom.getBoundingClientRect().top;
+    distanceItemBottom = window.innerHeight - itemBottom.getBoundingClientRect().top;
     if(distanceItemBottom >= 100){
-        $itemBottom.classList.add("efect-bottom");
+        itemBottom.classList.add("efect-bottom");
     }
+
+    distanceItemBottomTwo = window.innerHeight - itemBottomTwo.getBoundingClientRect().top;
+    if(distanceItemBottomTwo >= 100){
+        itemBottomTwo.classList.add("efect-bottom");
+    }
+
+    distanceItemBottomThree = window.innerHeight - itemBottomThree.getBoundingClientRect().top;
+    if(distanceItemBottomThree >= 100){
+        itemBottomThree.classList.add("efect-bottom");
+    }
+
+    distanceItemBottomFour = window.innerHeight - itemBottomFour.getBoundingClientRect().top;
+    if(distanceItemBottomFour >= 100){
+        itemBottomFour.classList.add("efect-bottom");
+    }
+
+    distanceItemBottomFive = window.innerHeight - itemBottomFive.getBoundingClientRect().top;
+    if(distanceItemBottomFive >= 100){
+        itemBottomFive.classList.add("efect-bottom");
+    }
+
 }
 
