@@ -408,7 +408,7 @@ small {
 .contact {
     position: relative;
     padding: 1rem;
-    padding-bottom: 40px;
+    padding-bottom: 1rem;
 }
 
 .contact-btn .circle,
@@ -515,7 +515,7 @@ small {
 }
 
 .grid-footer h4 {
-    padding-top: 60px;
+    padding-top: 1rem;
     letter-spacing: 2px;
 }
 
@@ -725,7 +725,7 @@ small {
     color: var(--first-color);
     letter-spacing: 5px;
     margin-top: 0;
-    padding-top: 4rem;
+    padding-top: 2rem;
     text-align: center;
 }
 
@@ -764,17 +764,6 @@ small {
     text-align: center;
     margin: 3px;
     color: var(--third-color);
-}
-
-.square {
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    margin: auto;
-    transform: rotate(45deg);
-    left: 0;
-    right: 0;
-    bottom: -40px;
 }
 
 /* ************* Efectos ************** */
@@ -890,6 +879,17 @@ small {
 
     .skills-tecnologias {
         padding-bottom: 1rem;
+    }
+
+    .square {
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        margin: auto;
+        transform: rotate(45deg);
+        left: 0;
+        right: 0;
+        bottom: -40px;
     }
 }
 
