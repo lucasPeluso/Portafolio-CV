@@ -53,6 +53,7 @@ img {
 p {
     line-height: 1.4;
     letter-spacing: 2px;
+    margin: 10px 0;
 }
 
 small {
@@ -358,6 +359,10 @@ small {
     color: var(--first-color);
 }
 
+.first-color {
+    color: var(--first-color);
+}
+
 .full-lg-screen{
     width: 100%;
     min-height: 100vh;
@@ -547,7 +552,7 @@ small {
 }
 
 .home-btn {
-    margin-top: 60px;
+    margin: 30px auto 20px;
     text-align: center;
 }
 
@@ -763,7 +768,15 @@ small {
 .skills-tecnologias h4 {
     text-align: center;
     margin: 3px;
+}
+
+.skills-tecnologias p {
     color: var(--third-color);
+}
+
+.skills-tecnologias h4 {
+    letter-spacing: 4px;
+    color: var(--first-color);
 }
 
 /* ************* Efectos ************** */
@@ -818,7 +831,7 @@ small {
     }
 
     .home-text {
-        width: 380px;
+        width: 410px;
     }
     
     .home-titles h1{
